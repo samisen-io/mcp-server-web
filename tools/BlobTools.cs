@@ -7,7 +7,7 @@ using System.Text;
 namespace MCPServer.Tools;
 
 [McpServerToolType]
-public class BlobTool(BlobContainerClient containerClient)
+public class BlobTools(BlobContainerClient containerClient)
 {
     [McpServerTool, Description("Lists all blobs/files in the container. Optionally filter by prefix (folder path).")]
     public async Task<string> ListBlobs(string? prefix = null)
