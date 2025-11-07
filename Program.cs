@@ -4,7 +4,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Configure Azure Blob Storage
 var blobConnectionString = builder.Configuration["AzureBlobStorage:ConnectionString"];
+
+if(blobConnectionString == null || blobConnectionString =="")
+  blobConnectionString = builder.Configuration["AzureBlobStorageConnectionString"];
+
 var containerName = builder.Configuration["AzureBlobStorage:ContainerName"];
+
+if(containerName == null || containerName == "")
+  containerName = builder.Configuration["AzureBlobStorageContainerName"];
 
 if (string.IsNullOrEmpty(blobConnectionString) || string.IsNullOrEmpty(containerName))
 {
