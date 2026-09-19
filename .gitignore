@@ -2,3 +2,7 @@
 /obj
 /.vs
 appsettings.Development.json
+# local publish profiles and build noise
+Properties/PublishProfiles/
+*.csproj.user
+*.stackdump
